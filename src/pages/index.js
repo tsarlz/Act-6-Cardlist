@@ -1,12 +1,10 @@
 import { PokemonCards } from "@/components/PokemonCards";
 import { useFetch } from "@/hooks/useFetch";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
+const URL = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=30";
 export default function Home() {
-  const [url, setUrl] = useState(
-    "https://pokeapi.co/api/v2/pokemon?offset=0&limit=30"
-  );
-  const { data: pokemon } = useFetch(url);
+  const { data: pokemon } = useFetch(URL);
 
   return (
     <div className="max-w-full max-h-full min-h-[100vh]   bg-stone-200">
